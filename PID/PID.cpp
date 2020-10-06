@@ -8,5 +8,7 @@ float PID::update(float procVar, float dt)
 
     float derivative = (error - prevError) / dt;
     prevError = error;
-    return (Kp * error) + (Ki * integral) + (Kd * derivative);
+    output = (Kp * error) + (Ki * integral) + (Kd * derivative);
+
+    return output;
 }
